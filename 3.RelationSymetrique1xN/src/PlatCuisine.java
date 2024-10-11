@@ -1,5 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class PlatCuisine {
 
@@ -68,9 +70,50 @@ public class PlatCuisine {
         return laCopie;
     }
 
-    public String toString() {
-        return "_libelle (" + get_libelle() + "), _recette (" + get_recette() + "), Ingredients : " + _mesIngredients.toString();
+
+    public String toString1() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("_libelle (").append(get_libelle()).append("), _recette (").append(get_recette()).append("), Ingredients : ");
+
+        // Parcours de la liste d'ingrédients avec un accès direct par index
+        for (int i = 0; i < _mesIngredients.size(); i++) {
+            sb.append("\n").append(_mesIngredients.get(i).toString());
+        }
+
+        return sb.toString();
     }
+
+
+    public String toString2() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("_libelle (").append(get_libelle()).append("), _recette (").append(get_recette()).append("), Ingredients : ");
+
+        // Parcours de la liste d'ingrédients et ajout à la chaîne de caractères
+        for (Ingredient ingredient : _mesIngredients) {
+            sb.append("\n").append(ingredient.toString());
+        }
+
+        return sb.toString();
+    }
+
+
+    public String toString3() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("_libelle (").append(get_libelle()).append("), _recette (").append(get_recette()).append("), Ingredients : ");
+
+        // Création de l'itérateur pour parcourir la liste d'ingrédients
+        Iterator<Ingredient> iterator = _mesIngredients.iterator();
+
+        // Parcours de la liste à l'aide de l'itérateur
+        while (iterator.hasNext()) {
+            Ingredient ingredient = iterator.next();
+            sb.append("\n").append(ingredient.toString());
+        }
+
+        return sb.toString();
+    }
+
+
 
     // METHODES GESTION D'INGREDIENTS
 
@@ -99,11 +142,18 @@ public class PlatCuisine {
 
     // Lie un ingredient a ce plat
     public void lierIngredient(Ingredient ingredient) {
+        if(ingredient.get_monPlat() != null){
+            ingredient.set_monPlat(null);
+        }
+        ingredient.set_monPlat(this);
         ajouterIngredient(ingredient);
     }
 
     // Délie un ingredient de ce plat
     public void delierIngredient(Ingredient ingredient) {
+        if(ingredient.get_monPlat() != null) {
+            ingredient.set_monPlat(null);
+        }
         retirerIngredient(ingredient);
     }
 

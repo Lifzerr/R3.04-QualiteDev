@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/1.ObjetsEtReferences/1.ObjetsEtReferences.iml" filepath="$PROJECT_DIR$/1.ObjetsEtReferences/1.ObjetsEtReferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.RelationSymetrique1x1/3.RelationSymetrique1x1.iml" filepath="$PROJECT_DIR$/3.RelationSymetrique1x1/3.RelationSymetrique1x1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.RelationSymetrique1xN/3.RelationSymetrique1xN.iml" filepath="$PROJECT_DIR$/3.RelationSymetrique1xN/3.RelationSymetrique1xN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/R3.04.iml" filepath="$PROJECT_DIR$/R3.04.iml" />
+    </modules>
+  </component>
+</project>

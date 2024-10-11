@@ -63,15 +63,24 @@ public class Ingredient {
         return "Ingredient: " + _libelle + ", Plat: " + platDescription;
     }
 
+
+
     // METHODES GESTION DU PLAT
 
     // Lier cet ingrédient à un plat
     public void lierPlat(PlatCuisine monPlat) {
+        if(monPlat != null) {
+            set_monPlat(null);
+        }
         set_monPlat(monPlat);
+        _monPlat.ajouterIngredient(this);
     }
 
     // Délier cet ingrédient du plat
     public void delierPlat() {
+        if (_monPlat.existeIngredient(this)) {
+            _monPlat.retirerIngredient(this);
+        }
         set_monPlat(null);
     }
 }
