@@ -3,6 +3,7 @@ public class Client {
     // Attributs
     private String _nom; // Nom du client
     private String _telephone; // Numéro de téléphone du client
+    private Table _maTable; // Table du client
 
     // Constructeurs
     public Client(String nom, String telephone) {
@@ -31,11 +32,28 @@ public class Client {
     public void setTelephone(String telephone) {
         _telephone = telephone;
     }
+    public Table getTable() {return _maTable; }
+    public void setTable(Table pTable) { this._maTable = pTable ;}
 
     // Méthodes
     // Méthodes usuelles
     public String toString() {
-        return "Client " + _nom + " (" + _telephone + ")";
+        return "Client " + _nom + " (" + _telephone + ")" + _maTable.toString();
+    }
+
+    // Méthodes spécifiques
+    public void delierTable(){
+        if(getTable() != null){
+            this.getTable().setClient(null);
+            this.setTable(null);
+        }
+    }
+
+    public void lierTable(Table pTable){
+        this.delierTable();
+        pTable.delierClient();
+        pTable.lierClient(this);
+        this.setTable(pTable);
     }
 
 }
