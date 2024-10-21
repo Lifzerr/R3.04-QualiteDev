@@ -27,5 +27,7 @@ public class TesteComposite {
         System.out.println("Prix de la Sauce Tomate : " + sauceTomate.getPrix() + "€");
         System.out.println("Prix de la Sauce Bolognaise : " + sauceBolo.getPrix() + "€");
         System.out.println("Prix des Pâtes Bolognaise : " + patesBolo.getPrix() + "€");
+
+        System.out.println(patesBolo.toString());
     }
 }

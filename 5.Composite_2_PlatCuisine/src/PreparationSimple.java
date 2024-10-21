@@ -13,4 +13,15 @@ public class PreparationSimple extends PreparationDeCuisine{
     public int getPrix(){
         return getPrixBase();
     }
+
+    // Méthode de composition
+    @Override
+    public boolean estComposé(){
+        return false;
+    }
+
+    @Override
+    public String toString(){
+        return getLibelle() + " - " + getPrix();
+    }
 }

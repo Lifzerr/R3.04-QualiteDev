@@ -35,12 +35,12 @@ public abstract class PreparationDeCuisine {
     }
 
 
-    // Méthode de la superClasse
+    // Méthode de la superClasse - métiers
     public abstract int getPrix();
+    public abstract String toString();
 
-    public boolean existeComposant(PreparationDeCuisine composant){return false;}
-    public boolean enleverComposant(PreparationDeCuisine composant){return false;}
-    public boolean ajouterComposant(PreparationDeCuisine composant){return false;}
-}
+
+    // Méthode supp
+    public abstract boolean estComposé();
 
 

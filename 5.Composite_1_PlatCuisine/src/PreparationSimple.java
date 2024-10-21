@@ -13,4 +13,9 @@ public class PreparationSimple extends PreparationDeCuisine{
     public int getPrix(){
         return getPrixBase();
     }
+    
+    @Override
+    public String toString(){
+        return getLibelle() + " - " + getPrix();
+    }
 }

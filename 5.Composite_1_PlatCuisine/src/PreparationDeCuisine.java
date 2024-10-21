@@ -6,41 +6,42 @@ public abstract class PreparationDeCuisine {
 
 
     // Constructeurs
-    public PreparationDeCuisine(){
+    public PreparationDeCuisine() {
         this._libelle = "";
         this._prix = 0;
     }
 
-    public PreparationDeCuisine(String pLibelle, int pPrix){
+    public PreparationDeCuisine(String pLibelle, int pPrix) {
         this._libelle = pLibelle;
         this._prix = pPrix;
     }
 
 
     // Encapsulation
-    public String getLibelle(){
+    public String getLibelle() {
         return this._libelle;
     }
 
-    public int getPrixBase(){
+    public int getPrixBase() {
         return this._prix;
     }
 
-    public void setLibelle(String pLibelle){
+    public void setLibelle(String pLibelle) {
         this._libelle = pLibelle;
     }
 
-    public void setPrix(int pPrix){
+    public void setPrix(int pPrix) {
         this._prix = pPrix;
     }
 
 
-    // Méthode de la superClasse
+    // Méthode de la superClasse - métiers
     public abstract int getPrix();
 
-    public boolean existeComposant(PreparationDeCuisine composant){return false;}
-    public boolean enleverComposant(PreparationDeCuisine composant){return false;}
-    public boolean ajouterComposant(PreparationDeCuisine composant){return false;}
+    // Méthode d'affichage
+    public abstract String toString();
+
+
+
+
 }
-
-
