@@ -20,37 +20,49 @@ public class PreparationComposee extends PreparationDeCuisine {
     // Méthode pour ajouter un composant
     public boolean ajouterComposant(PreparationDeCuisine composant) {
         // Utilise directement la méthode add du Set qui renvoie true si le composant a été ajouté
-        return composants.add(composant);
+        if(this.estComposé()){
+            return composants.add(composant);
+        }
+        else{
+            return false;
+        }
     }
 
     // Méthode pour enlever un composant
     public boolean enleverComposant(PreparationDeCuisine composant) {
         // Utilise directement la méthode remove du Set qui renvoie true si le composant a été enlevé
-        return composants.remove(composant);
+        if(this.estComposé()){
+            return composants.remove(composant);
+        }
+        else{
+            return false;
+        }
     }
 
     // Méthode pour vérifier si un composant existe
     public boolean existeComposant(PreparationDeCuisine composant) {
         // Vérifie d'abord si le composant donné correspond à cette instance elle-même
-        if (this.equals(composant)) {
-            return true;
-        }
+        if(this.estComposé()){
+            if (this.equals(composant)) {
+                return true;
+            }
 
-        // Parcours tous les composants du set
-        for (PreparationDeCuisine c : composants) {
-            // Si le composant est une préparation composée, on vérifie récursivement
-            if (c instanceof PreparationComposee) {
-                if (((PreparationComposee) c).existeComposant(composant)) {
+            // Parcours tous les composants du set
+            for (PreparationDeCuisine c : composants) {
+                // Si le composant est une préparation composée, on vérifie récursivement
+                if (c instanceof PreparationComposee) {
+                    if (((PreparationComposee) c).existeComposant(composant)) {
+                        return true;
+                    }
+                }
+                // Sinon, on vérifie s'il s'agit d'une préparation simple
+                else if (c.equals(composant)) {
                     return true;
                 }
             }
-            // Sinon, on vérifie s'il s'agit d'une préparation simple
-            else if (c.equals(composant)) {
-                return true;
-            }
-        }
 
-        // Si le composant n'a pas été trouvé, on retourne false
+            // Si le composant n'a pas été trouvé, on retourne false
+        }
         return false;
     }
 
