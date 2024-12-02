@@ -69,26 +69,5 @@ public class TesterObservateurMeteo {
         }
     }
 }
-/** Affichage obtenu :
 
- ### SAISIR LES VALEURS POUR LA SONDE (on simule) ###
- Date et heure (aaaa/mm/jj hh:mm) ? 2023
- Temp�rature en �C ? 17
- Pression en hPa ? 1024
-
- # Le programme principal met � jour l'objet observ� et l'affiche
- SONDE METEO : Date et heure (2023), Temperature �C (17.0), Pression hPa (1024.0)
-
- ... les observateurs sont mis � jour par le design pattern ...
-
- # Le programme principal affiche l'observateur : AFFICHEUR
- AFFICHEUR : Date et heure (2023), Temperature �C (17.0), Pression hPa (1024.0)
-
- # Le programme principal affiche l'observateur : BASE DE DONNEES
- BASE DE DONNEES : Date et heure (2023), Temperature �C (17.0), Pression hPa (1024.0)
-
- ### SAISIR LES VALEURS POUR LA SONDE (on simule) ###
- ..... etc etc
-
- **/
 
